@@ -1,0 +1,24 @@
+{
+  "name": "jscript-uzdaviniu-sprendimas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": " nodemon ./001/app.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RokasAbra/JScript-uzdaviniu-sprendimas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RokasAbra/JScript-uzdaviniu-sprendimas/issues"
+  },
+  "homepage": "https://github.com/RokasAbra/JScript-uzdaviniu-sprendimas#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
