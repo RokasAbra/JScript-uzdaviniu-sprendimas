@@ -652,5 +652,17 @@ do {
 
     console.log('============ Ciklai 11 =================');
 /*
-
+console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). 
+Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
 */
+
+let ciklai = 0;
+let randominiai = 0;
+let randominiuSuma = 0;
+do {
+    ciklai++ ;
+    randominiai = random(0, 10);
+    randominiuSuma = randominiai + randominiuSuma;
+} while (ciklai < 11 
+    || randominiuSuma < 20);
+    console.log(randominiuSuma, ciklai);

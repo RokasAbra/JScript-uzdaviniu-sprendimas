@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": " nodemon ./001/app.js ",
+    "dev": " nodemon ./004/app.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
