@@ -306,7 +306,7 @@ console.log(vidurkis());
 
 
 
-console.log('============ JS Basic Loops =================');
+console.log('============ JS Basic Loops 1 =================');
 
 
 /*
@@ -335,10 +335,322 @@ console.log('D:', `${kint1} ${kint2} ${kint3} ${suma}`);
 
 
 /*
-Sukurkite vieną kintamąjį, jam priskirkite skaičių (iš intervalo 5…10), kurį sugeneruoja funkcija 
+2. Sukurkite vieną kintamąjį, jam priskirkite skaičių (iš intervalo 5…10), kurį sugeneruoja funkcija 
 rand(5, 10) ir jį atspauszdinkite pasinaudojus console.log;
 
 */
-let betkas = 0;
-let belekas = Math.floor(Math.random() * (10 - 5 )) + 5;;
+console.log('============ JS Basic Loops 2 =================');
+function random(min, max) {
+    min = Math.ceil(min) ;
+    max = Math.floor(max) ;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let belekas = random(5, 10);
 console.log(belekas);
+
+/*
+3.Sukurkite kintamąjį ir jam priskirkite stringą “Labas”. Pasinaudodami ciklu ir console.log atspauzdinkite 
+kintamąjį 5 kartus;
+*/
+console.log('============ JS Basic Loops 3 =================');
+
+let zodis = 'Labas'
+
+for (let i = 0; i < 5; i++) {
+    console.log(zodis);
+    
+}
+
+/*
+4. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio 7 kartus;
+*/
+console.log('============ JS Basic Loops 4 =================');
+let kiekKartu = 0;
+for (let i = 0; i < 7; i++) {
+    
+    kiekKartu++
+    console.log(kiekKartu, zodis);
+    
+}
+
+/*
+5. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio 
+tiek kartų, koks skaičius yra sugeneruotas;
+*/
+console.log('============ JS Basic Loops 5 =================');
+let kiekPrasisuko = 0;
+for (let i = 0; i < belekas; i++) {
+  
+    kiekPrasisuko++;
+    
+    console.log(kiekPrasisuko, zodis, `random skc: ${belekas}`);
+}
+
+
+/*
+6. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio tiek kartų,
+ koks skaičius yra sugeneruotas, bet tik tada jeigu jis didesnis už 7;
+*/
+console.log('============ JS Basic Loops 6 =================');
+
+for (let i = 0; i < belekas; i++) {
+    if (belekas > 7) {
+        console.log(belekas);
+    }
+    
+}
+
+
+/*
+7.Deklaruokite kintamąjį už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(), 
+kurie yra iš intervalo 10…20. Ciklą kartokite 5 kartus;
+    A. Ciklo viduje sugeneruotą reikšmę priskirkite kintamajam, kurį sukūrėte už ciklo ribų ir jį atspauzdinkite;
+
+    B. Skaičiuokite ciklo viduje generuojamų reikšmių sumą, ją priskirdami kintamajam, kurį sukūrėte už ciklo ribų. 
+    Rezultatą atspauzdinkite pasinaudodami console.log už ciklo ribų;
+
+    C. Skaičius, generuojamus ciklo viduje dėkite į stringo tipo kintamąjį tarp skaičių darydami tarpą. Stringo 
+    tipo kintamąjį atspazdinkite už ciklo ribų jam pasibaigus;
+
+    D. Skaičius, generuojamus ciklo viduje dėkite į stringo tipo kintamąjį tarp skaičių darydami tarpą. Ciklui pasibaigus 
+    prie stringo tipo kintamojo pridėkite ciklo viduje generuotų skaičių sumą, paskaičiuotą kaip B dalyje. 
+    Stringo tipo kintamąjį atspausdinkite pasinaudodami console.log;
+*/
+console.log('============ JS Basic Loops 7 =================');
+
+let q;
+let suma1 = 0;
+let strin = ' ';
+for (let i = 0; i < 5; i++) {
+    q = random(10, 20);
+    suma1 = suma1 + q;
+   strin += ' ' + q;
+     console.log(q, `suma:`,suma1, strin);
+
+     
+do {
+    kinta = q + suma1;
+    kinta += ' ' + q;
+} while (i == 5);
+}
+
+
+console.log(`C. suma:`,suma1, strin);
+
+console.log(`D.:`,kinta);
+
+
+/*
+Deklaruokite kintamąjį (jeigu reikia kelis kintamuosius) už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(),
+ kurie yra iš intervalo 10…25. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius mažesnis nei 12;
+    A. Ciklo viduje sugeneruotą reikšmę priskirkite kintamajam, kurį sukūrėte už ciklo ribų ir jį atspauzdinkite;
+
+    B. Suskaičiuokite kiek iteracijų padarėte ir jų kiekį atspauzdinkite pasinaudodami console.log už ciklo ribų jam pasibaigus;
+
+    C. Skaičiuokite ciklo viduje generuojamų reikšmių sumą, atmesdami (neskaičiuodami) skaičius, kurie yra didesni nei 18, ją priskirdami kintamajam, 
+    kurį sukūrėte už ciklo ribų. Rezultatą atspauzdinkite pasinaudodami console.log už ciklo ribų;
+
+    D. Sumą skaičiuokite kaip C dalyje, bet papildomai susikurkite kintamąjį, kuriame suskaičiuokite kiek reikšmių atmetėte (nesumavote). Rezultatą 
+    su suma ir atmestų reikšmių kiekiu atspauzdinkite pasinaudodami console.log už ciklo ribų;
+
+    E. Suskaičiuokite kiek tarp cikle atsitiktinai generuojamų reikšmių yra lyginių ir kiek nelyginių skaičių. Rezultatą atspauzdinkite pasinaudodami
+     console.log už ciklo ribų jam pasibaigus.
+
+    F. Ciklą iš dalies B kartokite tol,  kol to ciklo iteracijų kiekis bus didesnis nei 20 (vieno ciklo). Paskaičiuokite kiek pakartojimų buvo 
+    atlikta ir rezultatą atspauzdinkite pabaigoje. 
+*/
+
+
+
+console.log('============ JS Basic Loops 8 =================');
+
+let z = 0 ;
+let cc = 0;
+let skaiciuSuma = 0;
+let xx = 0;
+let lyginiai = 0;
+let nelyginiai = 0;
+do {
+    z = random(10, 25);
+    cc++
+    console.log(z);
+} while (z > 12);
+
+//A.
+console.log(`Skaicius:`,z);
+//B.
+console.log(`kiek iteraciju: ${cc}`);
+//C. 
+do {
+    z = random(10, 25);
+    skaiciuSuma = skaiciuSuma + z;
+    if (z > 18) {
+       skaiciuSuma -= z;
+       xx++
+    }console.log('skc:', z);
+
+//E.
+    if (z % 2 == 0 ) {
+        lyginiai++
+    }      
+    if (z % 2 !== 0) {
+        nelyginiai++
+    }  
+} while (z > 12){
+   
+};
+console.log(`skaiciu suma: ${skaiciuSuma}`, );
+
+//D.
+console.log('Atmete:', xx );
+
+//E.
+console.log('Lyginiai:', lyginiai); 
+console.log('nelyginiai:', nelyginiai);
+
+//F.
+let pakartojimai = 0;
+let iterCount = 0;
+do {
+    z = random(10, 25);
+    iterCount++
+    pakartojimai = pakartojimai + iterCount;
+    // if (iterCount > 20) {
+    //     break;
+    // }
+    console.log(z,'Iteraciju:', iterCount, 'Pakartojo:',pakartojimai);
+} while (iterCount < 20);
+console.log('Iteraciju:', iterCount, 'Pakartojo:',pakartojimai);
+
+
+
+console.log('============ JS Basic Loops 9 =================');
+
+/*
+Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(),
+ kurie yra iš intervalo 5-10. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius 5;
+    A. Ciklo viduje paleiskite dar vieną ciklą kurį kartokite tiek kartų, koks skaičius buvo 
+    sugeneruotas. Paskaičiuokite kiek iteracijų padarė išorinis ciklas ir kiek bendrai iteracijų
+     padarė vidinis ciklas. Rezultatus atspauzdinkite pasinaudodami console.log už ciklo ribų jam pasibaigus;
+*/
+let kazkoksSkaicius = 0;
+let kiekIteraciju1 = 0;
+let kiekIteraciju2 = 0;
+do {
+   kazkoksSkaicius = random(5, 10)
+   console.log('isorinis ciklas: ',kazkoksSkaicius);
+   kiekIteraciju1++
+} while (kazkoksSkaicius !== 5);{
+    for (let i = 0; i < kazkoksSkaicius; i++) {
+        kiekIteraciju2++
+        kazkoksSkaicius = random(5, 10);
+        console.log('vidinis ciklas:',kazkoksSkaicius);
+    }
+}console.log('isorinis ciklas: ',kiekIteraciju1, 'vidinis ciklas: ',kiekIteraciju2);
+
+//B. Padarykite taip, kad išorinis ciklas pasibaigtų kai 5 yra sugeneruojamas ne pirmą, 
+// bet trečią kartą ir paskaičiuokite iteracijas analogiškai kaip A dalyje;
+
+
+let kk = 5;
+let dd = 0;
+// do {
+//     kazkoksSkaicius = random(5, 10)
+    
+// } while (kk !== 5);{
+    
+// }
+
+
+/*C. Padarykite analogiškai kaip B dalyje, bet tik kai 5 yra sugeneruojami 3 kartus iš eilės; 
+*/
+
+
+
+
+
+
+
+
+console.log('============ JS Basic Loops 10 =================');
+/*
+10. Kazys ir Petras žaidžiai bingo. Petras per vieną partiją surenka taškų kiekį nuo 10 iki 20, 
+Kazys - surenka taškų kiekį nuo 5 iki 25. Console.log išvesti žaidėjų vardus su taškų kiekiu 
+ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas,
+ kas greičiau surenka 222 taškus. Partijas kartokite tol, kol kažkuris žaidėjas pirmas surenks 222 arba daugiau taškų. 
+*/
+
+let Kazys = 0;
+let Petras = 0;
+let kazioTaskuSkaicius = 0;
+let petroTaskuSkaicius = 0;
+do {Kazys = random(10, 20);
+    Petras = random(5, 25);
+    kazioTaskuSkaicius = kazioTaskuSkaicius + Kazys;
+    petroTaskuSkaicius = petroTaskuSkaicius + Petras ;
+    console.log('Kazio:', kazioTaskuSkaicius,  'Petro:', petroTaskuSkaicius);
+} while (kazioTaskuSkaicius <= 222 
+    && petroTaskuSkaicius <= 222)
+    {
+        if (kazioTaskuSkaicius > petroTaskuSkaicius) {
+            console.log(`Partiją laimėjo: Kazys surinkes: ${kazioTaskuSkaicius} taskus`);
+        }
+        else {
+            console.log(`Partiją laimėjo: Petras surinkes: ${petroTaskuSkaicius} taskus`);
+        }
+    };
+    // console.log('Kazio taskai:', kazioTaskuSkaicius, 'Petro tasku skaicius:', Petras);
+
+
+    console.log('============ Ciklai 8 =================');
+    /*
+    console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 
+    (vienas skaičius vienoje eilutėje). Paskutinis atspausdintas skaičius turi būti 5;
+    */
+
+    let atsitiktinis = 0;
+    do {
+        atsitiktinis = random(0, 10);
+        console.log(atsitiktinis);
+    } while (atsitiktinis !== 5);
+    console.log(atsitiktinis);
+
+    console.log('============ Ciklai 9 =================');
+    /*
+    console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10
+     (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 100;
+    */
+
+     let atss = 0;
+     let atsSuma = 0;
+     do {
+         atss = random(0, 10);
+        atsSuma = atss + atsSuma;
+        
+     } while (atsSuma <= 100);
+     console.log(atsSuma);
+
+
+     console.log('============ Ciklai 10 =================');
+
+/*
+console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje).
+ Paskutinis atspausdintas skaičius turi būti 5 arba 7; Suskaičiuoti kiek ciklų prasisuko;
+*/
+
+let kazkosAtsisitiktinis = 0;
+let iteracCount = 0;
+do {
+    kazkosAtsisitiktinis = random(0, 10);
+    iteracCount++
+    
+} while (kazkosAtsisitiktinis !== 5 
+    && kazkosAtsisitiktinis !== 7);
+    console.log(kazkosAtsisitiktinis, 'iteraciju:,', iteracCount);
+
+
+    console.log('============ Ciklai 11 =================');
+/*
+
+*/

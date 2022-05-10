@@ -131,10 +131,11 @@ for (let i = 0; i < kotletoKasniai; i++) {
     
     // const gabaliukasSukramtomas = rand(1, 10);
     // kotletasSuvalgytasPer += gabaliukasSukramtomas;
-    
+    let r;
     do {
-        kotletasSuvalgytasPer++
-    } while (rand(0, 4));// kai iskrenta 0 kuris yra false ciklas sustoja
+        r = rand(0, 2);
+       // kotletasSuvalgytasPer++
+    } while (r);// kai iskrenta 0 kuris yra false ciklas sustoja
 
 }
 
