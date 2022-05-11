@@ -71,7 +71,7 @@ console.log(namasSuKaminu);
 
 //const n4 = n1.slice(); // kopijavimas, naudojamas tik masyvo kopijavimui
 const n4 = {...n1}; // kopijavimas
-n4.shift();
+// n4.shift();
 console.log(n4, n1);
 
 //Objekto kopijavimas
@@ -86,3 +86,16 @@ const a2 = {...a1};// trys taskai destrucktina a1 i jo sudedamasias dalis
 const namasSuKaminu2 = JSON.parse(JSON.stringify(namasSuKaminu)) ; //kopija
 namasSuKaminu2.animals.cat = 'kitas Katinas';
 console.log(namasSuKaminu, namasSuKaminu2);
+
+
+const map = new Map();
+map.set('Murka', 5);
+map.set('Pilkis', 7);//unikalus tokio pateis dar vieno neidetume pvz dar vieno 'Pilkis' tiesiog ji pakeistu.
+map.set('Pukis', 4);
+console.log(map.get('Pilkis'));
+console.log(map.has('Pilkis')); // patikrina ar yra toks elementas
+//map.delete('Pilkis');
+
+const masMap = [...map];
+console.table(masMap);
+console.log(map.size);            
