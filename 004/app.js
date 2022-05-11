@@ -16,24 +16,33 @@ let pinigai = 0;
 let pinigaiDaugiauUzDu = 0;
 let count = 0;
 let largest = 0;
+let pasikartojantisDidziausias = 0;
 for (let i = 0; i <= rand(10, 30); i++) {
     pinigine.push(rand(0, 10))
      pinigai += pinigine[i]; // 2. uzd
-     
-     if (pinigine[i] > largest) { //5. uzd
-        largest = pinigine[i];
-        for (let k = 0; k < largest.length; k++) {
-            count++
-            
-        }
-      }
+  
+     pinigine.sort((a, b) => a - b);
+     largest = Math.max(...pinigine)
+     if (pasikartojantisDidziausias == pinigine[i]) {
+        count++
+    }
+
+    //  if (pinigine[i] > largest) {
+        
+    //     largest = pinigine[i];
+    //     count++
+    //     // console.log(largest);
+    //   }
+     } 
       
+    //   console.log(count, largest);
+      // 
      
     //  pinigine.forEach((element, i) => {
     //     pinigine[i] = element + i;
     //   });
     
-}console.log(pinigine,'pinigu suma:', pinigai,'ilgis:', pinigine.length);
+console.log(pinigine,'pinigu suma:', pinigai,'ilgis:', pinigine.length);
 
 
 
@@ -78,11 +87,10 @@ let pinigai2 = 0;
 
 for (let i = 0; i <= rand(10, 30); i++) {
     pinigine2.push(rand(0, 10))
-     pinigai2 += pinigine2[i];
-   if (pinigine2[i] < 2) {
-    pinigine2.splice(pinigine2[i], 1, 0);
-   }
-}console.log(pinigai2, pinigine2 );
+     if (pinigine2[i] <= 2) {
+         pinigine2[i] = 0;
+     }
+}console.log('mazesni arba lygus 2 paversti i nuli:', pinigine2 );
 /*
 Surasti didžiausią reikšmę 1 uždavinio masyve 
 ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
@@ -91,3 +99,8 @@ ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 console.log('=========== Masyvai 5 ============');
 
 console.log('Didziausias:', largest, count);
+
+pasikartojantisDidziausias = pinigine[pinigine.length - 1];
+
+console.log('asd',pasikartojantisDidziausias);
+
