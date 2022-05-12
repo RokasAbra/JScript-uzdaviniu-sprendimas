@@ -18,11 +18,18 @@ let pinigaiDaugiauUzDu = 0;
 let count = 0;
 let largest = 0;
 let pasikartojantisDidziausias = 0;
-
+const popieriniai = [];
+const monetos = [];
 
 for (let i = 0; i < rand(10, 30); i++) {
     pinigine.push(rand(0, 10))
     largest = Math.max(...pinigine)
+    if (pinigine[i] > 2) {
+        popieriniai.push(pinigine[i])
+    }else {
+        monetos.push(pinigine[i])
+    }
+   
    
    }
 
@@ -66,6 +73,7 @@ console.log('=========== Masyvai 3 ============');
 */
 let didesnisDu = 0;
 for (let i = 0; i < pinigine.length; i++) {
+    
     if (pinigine[i] > 2) {
         didesnisDu += pinigine[i];
     // } if( pinigine[i] <= 2){
@@ -129,17 +137,12 @@ console.log('=========== Masyvai 7 ============');
 */
 
 let newWallet = [];
-for (let a = 0; a < pinigine.length ; a++) {
+for (let a = 0; a < 30 - pinigine.length + pinigine.length; a++) {
     newWallet.push(rand(0, 10));
     
     
    } console.table(newWallet);
    console.log(newWallet.length);
-
-
-
-
-
 
 
 
@@ -149,3 +152,58 @@ Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyv
  Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), 
  o į kitą didesnes nei 2 (popierinius pinigus);
 */
+
+
+   console.log('Popieriniai:', popieriniai,'Monetos:', monetos);
+
+
+   console.log('=========== Masyvai 9 ============');
+/*
+Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, kurio pirmas 
+elementas būtų masyvas iš 8 uždavinio su monetom, o antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
+*/   
+const naujaPinigine = [];
+
+    naujaPinigine.push(popieriniai)
+    naujaPinigine.push(monetos)
+   
+console.log(naujaPinigine);
+
+console.log('=========== Masyvai 10 ============');
+
+/*
+Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm:
+ ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+*/
+const korteles = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+
+naujaPinigine.push(korteles);
+console.log(naujaPinigine);
+
+
+
+console.log('=========== Masyvai 11 ============');
+
+/*
+Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
+*/
+naujaPinigine[2].sort()
+
+console.log(naujaPinigine);
+
+
+console.log('=========== Masyvai 12 ============');
+
+/*
+Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa'
+ (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' 
+ ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
+*/
+let bakoKorteles = ['MasterCard,  visa'] ;
+push(words[Math.floor(Math.random() * words.length)]);
+for (let i = 0; i <20 - naujaPinigine[2].length ; i++) {
+   
+    
+}
+
+console.log(naujaPinigine[2].length);

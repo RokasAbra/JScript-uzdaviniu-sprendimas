@@ -99,3 +99,4 @@ console.log(map.has('Pilkis')); // patikrina ar yra toks elementas
 const masMap = [...map];
 console.table(masMap);
 console.log(map.size);            
+
