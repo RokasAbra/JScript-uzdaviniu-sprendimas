@@ -136,13 +136,11 @@ console.log('=========== Masyvai 7 ============');
 (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis būtų lygiai 30;
 */
 
-let newWallet = [];
-for (let a = 0; a < 30 - pinigine.length + pinigine.length; a++) {
-    newWallet.push(rand(0, 10));
-    
-    
-   } console.table(newWallet);
-   console.log(newWallet.length);
+
+for (let a = pinigine.length; a < 30; a++) {
+    pinigine.push(rand(0, 10));
+   } console.table(pinigine);
+   
 
 
 
@@ -199,11 +197,124 @@ console.log('=========== Masyvai 12 ============');
  (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' 
  ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
 */
-let bakoKorteles = ['MasterCard,  visa'] ;
-push(words[Math.floor(Math.random() * words.length)]);
-for (let i = 0; i <20 - naujaPinigine[2].length ; i++) {
+// let bakoKorteles = ['MasterCard,  visa'] ;
+
+// for (let i = 0; i <20 - naujaPinigine[2].length ; i++) {
    
+    
+// }
+let words = ['MasterCard', 'Visa']
+for (let k = naujaPinigine[2].length; k < 20; k++) {
+    naujaPinigine[2].push(words[Math.floor(Math.random() * words.length)]);
+    
+}
+console.table(naujaPinigine[2]);
+
+console.log('=========== Masyvai 13 ============');
+/*
+Paskaičiuokite, kokio tipo kortelių ('MasterCard' arba 'Visa') yra daugiau;
+*/
+let cardCountMaster = 0;
+let cardCountVisa = 0;
+for (let c = 0; c < naujaPinigine[2].length; c++) {
+    if (naujaPinigine[2][c] == 'MasterCard') {
+        cardCountMaster++
+    }
+    if (naujaPinigine[2][c] == 'Visa') {
+        cardCountVisa++
+    }
+  
+}
+if (cardCountVisa > cardCountMaster) {
+    console.log('Korteliu Visa yra daugiau');
+}
+else {
+    console.log('Koreteliu MasterCard yra daugiau');
+}
+
+console.log('=========== Masyvai 14 ============');
+/*
+Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) 
+į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
+*/
+
+let skyrelis = [];
+for (let s = 0; s <= 10; s++) {
+    skyrelis.push(rand(1000000000, 9999999999));
+    
+}
+naujaPinigine.push(skyrelis);
+console.log(naujaPinigine);
+
+
+console.log('=========== Masyvai 15 ============');
+/*
+Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
+*/
+for (let x = 0; x < naujaPinigine[3].length; x++) {
+    naujaPinigine[3].sort()
+    for (let o = 0; o < naujaPinigine[3].length; o++) {
+        naujaPinigine[3].sort()
+        
+    }
+    
+}
+console.log(naujaPinigine[3]);
+
+console.log('=========== Masyvai 16 ============');
+
+/*
+Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom 
+( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
+*/
+
+// for (let k = 0; k < naujaPinigine[0].length; k++) {
+//     naujaPinigine[0].push(rand(3, 10));
+//     // while ((naujaPinigine[0][k] + naujaPinigine[0][k]) == 500) {
+        
+//     // }
+//     console.log(naujaPinigine[0][k]);
+// }
+// let naujaSuma = 0;
+// for (let i = 0; i < naujaPinigine[0].length; i++) {
+    
+//   do {
+//     naujaPinigine[0].push(rand(3, 10));
+//   } while (naujaPinigine[0] + naujaPinigine[0] == 500);
+  
+// }console.log(naujaPinigine[0]);
+
+// console.log(suma);
+
+
+console.log('=========== Masyvai 17 ============');
+/*
+Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite 
+iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
+*/
+
+let laimingi = 0;
+for (let e = 0; e < naujaPinigine[3].length; e++) {
+    if (pinigine[3] % 777 === 0) {
+        laimingi++
+        console.log('Jus laimejote', naujaPinigine[3][e], laimingi);
+    }else {
+        laimingi++
+        console.log('Jus nieko nelaimejote', naujaPinigine[3][e], laimingi);
+    }
     
 }
 
-console.log(naujaPinigine[2].length);
+
+
+
+
+
+
+console.log('=========== Masyvai 18 ============');
+
+
+/*
+Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: 
+['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
+*/
