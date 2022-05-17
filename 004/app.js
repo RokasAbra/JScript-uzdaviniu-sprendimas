@@ -295,7 +295,7 @@ iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuok
 
 let laimingi = 0;
 for (let e = 0; e < naujaPinigine[3].length; e++) {
-    if (pinigine[3] % 777 === 0) {
+    if (pinigine[3] % 777 !== 0) {
         laimingi++
         console.log('Jus laimejote', naujaPinigine[3][e], laimingi);
     }else {
@@ -303,7 +303,7 @@ for (let e = 0; e < naujaPinigine[3].length; e++) {
         console.log('Jus nieko nelaimejote', naujaPinigine[3][e], laimingi);
     }
     
-}
+}console.log(laimingi);
 
 
 
@@ -318,3 +318,14 @@ console.log('=========== Masyvai 18 ============');
 Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: 
 ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 */
+
+let penktas = ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'];
+penktas.sort(function (a, b) {
+    return a.length - b.length
+})
+naujaPinigine.push(penktas);
+// for (let j = 0; j < naujaPinigine.length; j++) {
+    
+    
+// }
+console.table(naujaPinigine);
