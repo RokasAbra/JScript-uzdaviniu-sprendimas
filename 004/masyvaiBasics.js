@@ -216,7 +216,7 @@ do {
     }
   
 } while (arr.length < n);
-console.log(arr, arr.length);
+// console.log(arr, arr.length);
 
 // You can take this value from user
 const k = 100
@@ -245,8 +245,30 @@ do {
     newArr.push(arr);
   
 } while (arr2.length < k);
-console.log(arr2, arr2.length);
+// console.log(arr2, arr2.length);
+// Pagal destytoja new Set() sudeda tik unikalias reiksmes nepasikartojancias
+const longSet1 = new Set();
 
+do {
+    longSet1.add(rand(100, 999));
+} while (longSet1.size < 100);
+const longArray1 = [...longSet1];
+
+
+const longSet2 = new Set();
+do {
+    longSet2.add(rand(100, 999));
+} while (longSet2.size < 100);
+
+const longArray2 = [...longSet2];
+console.table(longArray1);
+console.table(longArray2);
+
+const freakArray = [];
+longArray1.forEach((v, i) => {
+    freakArray[v] = longArray2[i];
+});
+console.table(freakArray);
 
 console.log('======================== Masyvai basics 6 ========================');
 
