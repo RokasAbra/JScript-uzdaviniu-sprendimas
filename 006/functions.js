@@ -159,9 +159,9 @@ const prime = (a) => {
 
 };
 const isTryju = [rand(1, 33), rand(1, 33), rand(1, 33),];
-const yesOrNo = (a) => {
-    for (let i = 0; i < 3; i++) {
-       if (prime(a.slice(-3)[i])) {
+const yesOrNo = (a, c = 3) => {
+    for (let i = 0; i < c; i++) {
+       if (prime(a.slice(-c)[i])) {
            return true;
        } 
         return false;
