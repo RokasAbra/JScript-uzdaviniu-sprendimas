@@ -1,11 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import Hello  from "./Components/009/Hello";
+import Lokis from './Components/009/Lokis';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Hello></Hello>
+        <Hello/>
+        <Hello/>
+        <Lokis/>
       </header>
     </div>
   );
