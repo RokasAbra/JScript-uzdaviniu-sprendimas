@@ -1,9 +1,9 @@
-function Lokis() {
-    const xzz = 33;
+function Lokis({skaicius}) {
+    const xzz = 11;
     return ( 
         <>
     <h2>Lokys</h2>
-    <span>Misko zveris Nr. {xzz > 20 ? 'Daug' : 'Nedaug'}</span> 
+    <span>Misko zveris Nr. {skaicius + 11 }</span> 
     </>)
 }
 export default Lokis;
