@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.kvadratukai {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 77px;
+  height: 77px;
+  background-color: crimson;
+  margin: 7px;
+  border-radius: 7px;
+}
+
+.kvadratukaiC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
